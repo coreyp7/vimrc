@@ -13,7 +13,13 @@ set hlsearch " highlight all search results
 set incsearch "highlight matching characters as you type
 set ignorecase "Always case insensitive
 
-colorscheme koehler
+" light themes
+colorscheme peachpuff
+"colorscheme morning
+"colorscheme zellner
+
+" dark themes
+" colorscheme koehler
 
 " Highlight show column/row of cursor
 set cursorline
@@ -37,18 +43,3 @@ set tabstop=8 softtabstop=0
 " Show line numbers in explore menu
 let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 
-" Colmak-dh remapping
-" nnoremap m h
-" nnoremap n j
-" nnoremap e k
-" nnoremap i l 
-" nnoremap u i
-" nnoremap U I
-" nnoremap l u
-" nnoremap k n
-
-" nnoremap l i
-" nnoremap m h
-" nnoremap n j
-" nnoremap e k
-" nnoremap i l

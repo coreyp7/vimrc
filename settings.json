@@ -1,0 +1,157 @@
+{
+  "editor.folding": false,
+  "editor.glyphMargin": false,
+  "editor.minimap.enabled": false,
+  "workbench.colorTheme": "Jo Light",
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "github.copilot.inlineSuggest.enabled": false,
+  // VSCode Vim Extension Settings converted from .vimrc
+  // Basic Vim settings
+  "vim.leader": " ",
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.ignorecase": true,
+  "vim.smartcase": true,
+  "vim.showmode": true,
+  "vim.showcmd": true,
+  "vim.visualbell": true,
+  "vim.smarttab": true,
+  "vim.autoindent": true,
+  "vim.smartindent": true,
+  
+  // Key remappings
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["k", "j"],
+      "after": ["<Esc>", "l"]
+    }
+  ],
+  
+  "vim.normalModeKeyBindings": [
+    // Semicolon to colon mapping
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    // Window navigation
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.navigateUp"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.navigateDown"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.navigateLeft"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.navigateRight"]
+    },
+    // Tab navigation
+    {
+      "before": ["<leader>", "1"],
+      "commands": ["workbench.action.openEditorAtIndex1"]
+    },
+    {
+      "before": ["<leader>", "2"],
+      "commands": ["workbench.action.openEditorAtIndex2"]
+    },
+    {
+      "before": ["<leader>", "3"],
+      "commands": ["workbench.action.openEditorAtIndex3"]
+    },
+    {
+      "before": ["<leader>", "4"],
+      "commands": ["workbench.action.openEditorAtIndex4"]
+    },
+    {
+      "before": ["<leader>", "5"],
+      "commands": ["workbench.action.openEditorAtIndex5"]
+    },
+    {
+      "before": ["<leader>", "6"],
+      "commands": ["workbench.action.openEditorAtIndex6"]
+    },
+    {
+      "before": ["<leader>", "7"],
+      "commands": ["workbench.action.openEditorAtIndex7"]
+    },
+    {
+      "before": ["<leader>", "8"],
+      "commands": ["workbench.action.openEditorAtIndex8"]
+    },
+    {
+      "before": ["<leader>", "9"],
+      "commands": ["workbench.action.openEditorAtIndex9"]
+    },
+    {
+      "before": ["<leader>", "0"],
+      "commands": ["workbench.action.lastEditorInGroup"]
+    },
+    // File operations
+    {
+      "before": ["<leader>", "t", "n"],
+      "commands": ["workbench.action.files.newUntitledFile"]
+    },
+    {
+      "before": ["<leader>", "t", "c"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.view.explorer"]
+    },
+    // Split operations
+    {
+      "before": ["<leader>", "v", "s"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<leader>", "h", "s"],
+      "commands": ["workbench.action.splitEditorDown"]
+    }
+  ],
+  
+  // VSCode editor settings that correspond to your vim settings
+  "editor.lineNumbers": "relative",
+  "editor.cursorSurroundingLines": 15,
+  "editor.wordWrap": "off",
+  "editor.rulers": [80],
+  "editor.renderLineHighlight": "all",
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "editor.detectIndentation": false,
+  "editor.renderWhitespace": "none",
+  
+  // VSCode specific settings that enhance the Vim experience
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-x>": false,
+    "<C-z>": false,
+    "<C-y>": false
+  },
+  // To improve performance
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  
+  // File explorer settings
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false
+}

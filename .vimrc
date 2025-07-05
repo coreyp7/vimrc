@@ -1,14 +1,15 @@
 let mapleader = " "
 
 " light themes
-"colorscheme peachpuff
+colorscheme peachpuff
+
 "colorscheme morning
 "colorscheme zellner
 
 " dark themes
-colorscheme koehler
+" colorscheme koehler
 
-" General
+" Settings in no particular order
 set nocompatible " don't make vim compatible with vi
 syntax on
 set number " show line numbers
@@ -28,20 +29,23 @@ set et sts=4 sw=4 ts=4
 "       -- or de-indenting -- a line)
 " sts = softtabstop (the number of spaces to use when expanding tabs)
 set smarttab
-
-set ruler
 set ai "Auto indent
 set si "Smart indent
 
-" Show line numbers in explore menu
+" Show line numbers in explore menu (No idea wtf this is doing lol)
 let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 
 " Highlight show column/row of cursor
-set cursorline
-highlight Cursorline cterm=bold guifg=white
-highlight CursorColumn ctermbg=darkgray ctermbg=Black cterm=bold guifg=white
-set scrolloff=10
 set colorcolumn=80 " so I know when my line is going too far
+set cursorline
+set cursorcolumn
+set scrolloff=15
+
+" Make wildmenu behave like bash completion. Finding commands are so easy now.
+" https://stackoverflow.com/questions/1840862/favorite-minimalistic-vimrc-configuration
+set wildmode=list:longest
+
+" Remaps start here
 
 " Set leader key
 " https://stackoverflow.com/questions/446269/can-i-use-space-as-mapleader-in-vim
@@ -92,6 +96,8 @@ nmap <leader>hs :split<CR> :wincmd j<CR>
 " run the Bash script by pressing F6 without leaving VIM. (?)
 map <f6> :w <CR>:!bash % <CR>"
 
-" Make wildmenu behave like bash completion. Finding commands are so easy now.
-" https://stackoverflow.com/questions/1840862/favorite-minimalistic-vimrc-configuration
-set wildmode=list:longest
+" Easy resizing of split
+noremap <right> :vertical resize -5<CR>
+noremap <left> :vertical resize +5<CR>
+noremap <up> :resize +5<CR>
+noremap <down> :resize -5<CR>

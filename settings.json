@@ -1,12 +1,43 @@
 {
+  // ============================================================================
+  // General
+  // ============================================================================
+  
   "editor.folding": false,
   "editor.glyphMargin": false,
   "editor.minimap.enabled": false,
-  "workbench.colorTheme": "Jo Light",
-  "github.copilot.nextEditSuggestions.enabled": false,
-  "github.copilot.inlineSuggest.enabled": false,
-  // VSCode Vim Extension Settings converted from .vimrc
-  // Basic Vim settings
+  "editor.lineNumbers": "relative",
+  "editor.cursorSurroundingLines": 15,
+  "editor.wordWrap": "off",
+  "editor.rulers": [80],
+  "editor.renderLineHighlight": "all",
+  "editor.renderWhitespace": "none",
+  "editor.hover.enabled": true,
+  
+  // Indentation
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "editor.detectIndentation": false,
+
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
+  
+  // ============================================================================
+  // Language specific
+  // ============================================================================
+  
+  "[rust]": {
+    "editor.semanticHighlighting.enabled": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  
+  // ============================================================================
+  // Vim config
+  // ============================================================================
   "vim.leader": " ",
   "vim.hlsearch": true,
   "vim.incsearch": true,
@@ -18,8 +49,9 @@
   "vim.smarttab": true,
   "vim.autoindent": true,
   "vim.smartindent": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
   
-  // Key remappings
   "vim.insertModeKeyBindings": [
     {
       "before": ["k", "j"],
@@ -28,12 +60,13 @@
   ],
   
   "vim.normalModeKeyBindings": [
-    // Semicolon to colon mapping
+    // Use colon intead of semicolon for esc key
     {
       "before": [";"],
       "after": [":"]
     },
-    // Window navigation
+    
+    // split navigation
     {
       "before": ["<C-k>"],
       "commands": ["workbench.action.navigateUp"]
@@ -50,6 +83,7 @@
       "before": ["<C-l>"],
       "commands": ["workbench.action.navigateRight"]
     },
+    
     // Tab navigation
     {
       "before": ["<leader>", "1"],
@@ -91,7 +125,7 @@
       "before": ["<leader>", "0"],
       "commands": ["workbench.action.lastEditorInGroup"]
     },
-    // File operations
+    
     {
       "before": ["<leader>", "t", "n"],
       "commands": ["workbench.action.files.newUntitledFile"]
@@ -100,6 +134,8 @@
       "before": ["<leader>", "t", "c"],
       "commands": ["workbench.action.closeActiveEditor"]
     },
+
+    // quick file operations
     {
       "before": ["<leader>", "w"],
       "commands": ["workbench.action.files.save"]
@@ -108,10 +144,7 @@
       "before": ["<leader>", "q"],
       "commands": ["workbench.action.closeActiveEditor"]
     },
-    {
-      "before": ["<leader>", "e"],
-      "commands": ["workbench.view.explorer"]
-    },
+    
     // Split operations
     {
       "before": ["<leader>", "v", "s"],
@@ -120,23 +153,25 @@
     {
       "before": ["<leader>", "h", "s"],
       "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["<leader>", "m", "v", "s"],
+      "commands": ["workbench.action.moveEditorToNextGroup"]
+    },
+    {
+      "before": ["<leader>", "m", "v", "b"],
+      "commands": ["workbench.action.moveEditorToPreviousGroup"]
+    },
+    
+    // "go back"
+    {
+      "before": ["g", "b"],
+      "after": ["<C-o>"]
     }
   ],
   
-  // VSCode editor settings that correspond to your vim settings
-  "editor.lineNumbers": "relative",
-  "editor.cursorSurroundingLines": 15,
-  "editor.wordWrap": "off",
-  "editor.rulers": [80],
-  "editor.renderLineHighlight": "all",
-  "editor.insertSpaces": true,
-  "editor.tabSize": 4,
-  "editor.detectIndentation": false,
-  "editor.renderWhitespace": "none",
-  
-  // VSCode specific settings that enhance the Vim experience
-  "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
+  // i think this was so that these vim bindings 
+  // aren't overwriting vscode stuff
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false,
@@ -146,12 +181,110 @@
     "<C-z>": false,
     "<C-y>": false
   },
-  // To improve performance
-  "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
+  
+  
+  // Z e n
+  "zenMode.hideLineNumbers": false,
+  "zenMode.centerLayout": false,
+  "zenMode.hideStatusBar": false,
+  "zenMode.fullScreen": true,
+  
+  // ============================================================================
+  // copilot
+  // ============================================================================
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "github.copilot.nextEditSuggestions.enabled": false,
+
+  // ============================================================================
+  // todo highlighting
+  // ============================================================================
+  // TODO Highlight extension
+  "todohighlight.keywords": [
+    {
+      "text": "DEBUG:",
+      "color": "#ffffff",
+      "backgroundColor": "#9d4edd",
+      "border": "1px solid #7209b7",
+      "borderRadius": "3px",
+      "overviewRulerColor": "#9d4edd",
+      "isWholeLine": false
+    },
+    {
+      "text": "REVIEW:",
+      "color": "#ffffff", 
+      "backgroundColor": "#f77f00",
+      "border": "1px solid #d62d20",
+      "borderRadius": "3px",
+      "overviewRulerColor": "#f77f00",
+      "isWholeLine": false
+    },
+    {
+      "text": "NOTE:",
+      "color": "#003566",
+      "backgroundColor": "#ffd60a",
+      "border": "1px solid #ffb700",
+      "borderRadius": "3px",
+      "overviewRulerColor": "#ffd60a",
+      "isWholeLine": false
+    },
+    {
+      "text": "HACK:",
+      "color": "#ffffff",
+      "backgroundColor": "#dc2626",
+      "border": "1px solid #991b1b",
+      "borderRadius": "3px",
+      "overviewRulerColor": "#dc2626",
+      "isWholeLine": false
+    },
+    {
+      "text": "TODO:",
+      "color": "#ffffff",
+      "backgroundColor": "#2563eb",
+      "border": "1px solid #1d4ed8",
+      "borderRadius": "3px",
+      "overviewRulerColor": "#2563eb",
+      "isWholeLine": false
+    },
+    {
+      "text": "FIXME:",
+      "color": "#ffffff",
+      "backgroundColor": "#dc2626",
+      "border": "1px solid #991b1b", 
+      "borderRadius": "3px",
+      "overviewRulerColor": "#dc2626",
+      "isWholeLine": false
+    },
+    {
+      "text": "BUG:",
+      "color": "#ffffff",
+      "backgroundColor": "#ef4444",
+      "border": "1px solid #dc2626",
+      "borderRadius": "3px", 
+      "overviewRulerColor": "#ef4444",
+      "isWholeLine": false
+    }
+  ],
+  
+  // ============================================================================
+  // random
+  // ============================================================================
+  "workbench.colorTheme": "Monokai",
+  "workbench.colorCustomizations": {
+    "editor.selectionBackground": "#ffffff",
+    "editor.wordHighlightTextBackground": "#ffffff08",
+    "editor.wordHighlightTextBorder": "#0051ff"
   },
   
-  // File explorer settings
   "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  
+  // Extension affinity for better performance
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  }
 }
